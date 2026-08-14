@@ -125,13 +125,14 @@ ORDER BY start_hour, member_casual;
 >***💡 Insight:** Annual members exhibit two distinct usage peaks at 8 AM and 5 PM, which strongly aligns with standard office commuting hours. Casual riders show a gradual increase throughout the day, peaking in the late afternoon for leisurely, unhurried rides.*
 
 ### Visualization
-*To effectively communicate the differences between "Commuters" (members) and "Leisure Riders" (casuals) to the Executive Team, I built an interactive dashboard using Tableau and embedded it into this notebook.*
+*To effectively communicate the differences between "Commuters" (members) and "Leisure Riders" (casuals) to the Executive Team, I built an interactive dashboard using Tableau.*
 
 <img width="999" height="799" alt="Cyclistic Bike-Share_ Member vs  Casual Riders Analysis" src="https://github.com/user-attachments/assets/c5e8ed92-9f3a-41d1-96a7-2c7fc56f2e3e" />
 
-*As shown in the interactive dashboard above, casual riders ride longer for leisure on weekends, while members commute daily during peak hours.*
+> ***💡 Key Takeaway:** As shown in the dashboard above, casual riders ride longer for leisure on weekends, while annual members commute daily during peak hours.*
 
-https://public.tableau.com/views/VizofCyclisticBike/CyclisticBike-ShareMembervs_CasualRidersAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+**🔗 [Click here to view the Interactive Dashboard on Tableau Public](https://public.tableau.com/views/VizofCyclisticBike/CyclisticBike-ShareMembervs_CasualRidersAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
+*(Tip: Feel free to interact with the filters and hover over the charts to explore detailed metrics!)*
 
 ## 💡 Strategic Recommendations (Act Phase)
 
