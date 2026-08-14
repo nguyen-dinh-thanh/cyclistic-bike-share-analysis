@@ -66,10 +66,13 @@ WHERE
 ```
 ## 📊 Analysis & Visualization
 ### Analysis
-***Objective:** Identify behavioral differences between casual riders and annual members.*
+*Objective: Identify behavioral differences between casual riders and annual members.*
 
-#### Query 1: Total rides & average duration by user type
+---
+
+#### 🔍 Query 1: Total rides & average duration by user type
 ***Purpose:** To understand the overall volume and trip length differences between the two user groups.*
+
 ```sql
 SELECT 
   member_casual,
@@ -78,11 +81,11 @@ SELECT
 FROM `stable-ring-382611.cyclistic_case_study.cleaned_tripdata`
 GROUP BY member_casual;
 ```
-***Insight:** Casual riders spend significantly more time per ride compared to members, despite having fewer total rides.*
+>***💡 Insight:** Casual riders spend significantly more time per ride compared to members, despite having fewer total rides.*
 
 ---
 
-#### Query 2: Total rides by day of the week
+#### 📅 Query 2: Total rides by day of the week
 ***Purpose:** To identify weekly usage patterns and compare the volume of rides on weekdays versus weekends for both user groups.*
 ```sql
 SELECT 
@@ -104,11 +107,11 @@ ORDER BY
   END, 
   member_casual;
   ```
-***Insight:** Casual riders peak during the weekends (Saturday and Sunday), indicating strong usage for leisure activities. In contrast, annual members maintain a consistent and high volume during the weekdays, reflecting a daily commuting routine.*
+>***💡 Insight:** Casual riders peak during the weekends (Saturday and Sunday), indicating strong usage for leisure activities. In contrast, annual members maintain a consistent and high volume during the weekdays, reflecting a daily commuting routine.*
 
 ---
 
-#### Query 3: Total rides by hour of the day
+#### ⏱️ Query 3: Total rides by hour of the day
 ***Purpose:** To analyze intra-day usage trends and pinpoint peak hours for casual riders and members.*
 ```sql
 SELECT 
@@ -119,7 +122,7 @@ FROM `stable-ring-382611.cyclistic_case_study.cleaned_tripdata`
 GROUP BY start_hour, member_casual
 ORDER BY start_hour, member_casual;
 ```
-***Insight:** Annual members exhibit two distinct usage peaks at 8 AM and 5 PM, which strongly aligns with standard office commuting hours. Casual riders show a gradual increase throughout the day, peaking in the late afternoon for leisurely, unhurried rides.*
+>***💡 Insight:** Annual members exhibit two distinct usage peaks at 8 AM and 5 PM, which strongly aligns with standard office commuting hours. Casual riders show a gradual increase throughout the day, peaking in the late afternoon for leisurely, unhurried rides.*
 
 ### Visualization
 *To effectively communicate the differences between "Commuters" (members) and "Leisure Riders" (casuals) to the Executive Team, I built an interactive dashboard using Tableau and embedded it into this notebook.*
