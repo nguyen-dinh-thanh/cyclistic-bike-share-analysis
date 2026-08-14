@@ -131,6 +131,7 @@ ORDER BY start_hour, member_casual;
 https://public.tableau.com/views/VizofCyclisticBike/CyclisticBike-ShareMembervs_CasualRidersAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ## 💡 Strategic Recommendations (Act Phase)
+
 ### Conclusion
 Through comprehensive analysis using Python and SQL, the data clearly defines the underlying differences in usage behaviors. Annual members primarily use bikes for daily, routine commuting with shorter ride durations on weekdays. In contrast, casual riders use bikes for leisure and tourism, with significantly longer ride durations concentrated on weekends and during the summer.
 
@@ -138,15 +139,19 @@ Through comprehensive analysis using Python and SQL, the data clearly defines th
 To convert casual riders into annual members, Cyclistic should avoid pitching "daily commute savings" and instead focus messaging on maximizing savings on leisure activities and weekend rides.
 
 1. **Introduce Flexible Leisure-Oriented Passes:** Launch a seasonal "Summer Membership" or a "Weekend Member Pass," featuring a credit-rollover option where pass fees can be applied toward upgrading to a full Annual Membership.
-  * * **Pros:** Lowers the entry barrier for casual riders; encourages gradual transition to annual plans.
-  * * **Cons:** Requires adjustments to the current billing and app infrastructure.
+   * **Pros:** Lowers the entry barrier for casual riders; encourages gradual transition to annual plans.
+   * **Cons:** Requires adjustments to the current billing and app infrastructure.
 2. **Execute Time- and Location-Targeted Digital Campaigns:** Focus digital ad spending (social media, in-app push notifications) around high-traffic casual stations near parks, waterfronts, and tourist destinations.
-  * **Pros:** High ROI on marketing budget by targeting the right audience at the right time.
-  * **Cons:** May miss casual riders who ride outside of these specific "hot zones."
+   * **Pros:** High ROI on marketing budget by targeting the right audience at the right time.
+   * **Cons:** May miss casual riders who ride outside of these specific "hot zones."
 3. **Implement Gamification & Cost Comparison:** Introduce an in-app feature highlighting cost comparisons: "You spent $X on single passes this month. An Annual Membership would have saved you $Y!"
-  * **Pros:** Provides a strong, personalized financial incentive to upgrade based on the user's actual behavior.
-  * **Cons:** Requires development time from the software engineering team to integrate dynamic messaging.
+   * **Pros:** Provides a strong, personalized financial incentive to upgrade based on the user's actual behavior.
+   * **Cons:** Requires development time from the software engineering team to integrate dynamic messaging.
 
+### Next Steps & Action Plan
+* **Who:** The Cyclistic Marketing Analytics Team & Digital Marketing Team.
+* **What:** Pilot a targeted digital marketing campaign using the "Cost Comparison" messaging across email and social media channels. Gather supplementary data, specifically weather patterns and financial pricing models, to refine the break-even point for riders.
+* **When:** Launch the pilot campaign in May, exactly 4 weeks ahead of the upcoming summer peak season. Track and evaluate the casual-to-member conversion rate throughout the summer months to determine campaign efficacy.
 
 
 ## 🧠 Project Retrospective & Learnings
