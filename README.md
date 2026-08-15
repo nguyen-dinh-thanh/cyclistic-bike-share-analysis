@@ -1,30 +1,34 @@
-# Cyclistic Bike-Share Case Study: Converting Casual Riders
+# 🚲 CYCLISTIC BIKE-SHARE CASE STUDY: CONVERTING CASUAL RIDERS
 
-## 📝 Introduction
+
+## 📝 INTRODUCTION
 Cyclistic is a successful bike-share program based in Chicago. The company offers casual riding passes and annual memberships. The director of marketing believes the company’s future success depends on maximizing the number of annual memberships. This project analyzes historical trip data to uncover the distinct usage behaviors between casual riders and annual members to drive future marketing strategies.
 
-### The Business Task
+### 🎯 The Business Task
 Analyze Cyclistic's historical bike trip data to identify differences in usage habits between casual riders and annual members. These data-backed insights will guide marketing strategies aimed at converting casual riders into annual members.
 
-### Core Question
+### ❓Core Question
 How do annual members and casual riders use Cyclistic bikes differently?
 
-### Key Stakeholders
+### 👥 Key Stakeholders
 * **Lily Moreno:** Director of Marketing and direct manager.
 * **Cyclistic Marketing Analytics Team:** Fellow data analysts responsible for collecting and reporting data.
 * **Cyclistic Executive Team:** The detail-oriented team responsible for approving the recommended marketing program.*
 
-## 🛠 Data Preparation & Processing
-### Data Source & Organization:
+
+## 🛠 DATA PREPARATION & PROCESSING
+### 📂 Data Source & Organization:
 The data source used consists of Cyclistic's historical trip datasets covering the previous 12 months, made publicly available by Motivate International Inc. The data is organized in monthly/quarterly CSV files. Key features include ride ID, bike type, start and end timestamps, start and end station names/IDs, geographic coordinates, and customer category (casual rider or annual member).
 
-### Data Credibility (ROCCC):
+### 🛡️ Data Credibility (ROCCC):
 * **Reliable & Original:** First-party data directly captured from Cyclistic's tracking and station system.
 * **Comprehensive & Current:** Covers a large volume of trips across the most recent 12-month period, reflecting up-to-date user trends without sampling bias.
 * **Cited:** Officially made available under a license by Motivate International Inc.
 * **Privacy & Security:** Personally identifiable information (PII) such as rider names or credit card details has been excluded to preserve privacy and ensure compliance with data protection standards. Due to privacy regulations, individual user behavior cannot be tracked longitudinally or mapped to specific residential locations.
 
-### Data Cleaning & Feature Engineering
+### 🧹 Data Cleaning & Feature Engineering
+**Objective:** The raw data contained anomalies (negative durations, missing GPS coordinates, and staff test rides). I wrote an SQL query to filter out this noise and create new calculated features (trip duration in minutes and the day of the week) for deeper analysis.
+
 ```SQL
 CREATE OR REPLACE TABLE `stable-ring-382611.cyclistic_case_study.cleaned_tripdata` AS
 
@@ -64,9 +68,13 @@ WHERE
   AND end_lat BETWEEN 41.6 AND 42.1 
   AND end_lng BETWEEN -87.9 AND -87.5;
 ```
-## 📊 Analysis & Visualization
-### Analysis
-*Objective: Identify behavioral differences between casual riders and annual members.*
+
+>***Result:** A fully cleaned, analysis-ready table (cleaned_tripdata) with accurate geographic bounds, logical trip durations (1 min to 24 hours), and zero duplicate or test entries.*
+
+
+## 📊 ANALYSIS & VISUALIZATION
+### 📈 Analysis
+**Objective:** Identify behavioral differences between casual riders and annual members.
 
 ---
 
@@ -81,12 +89,14 @@ SELECT
 FROM `stable-ring-382611.cyclistic_case_study.cleaned_tripdata`
 GROUP BY member_casual;
 ```
+
 >***💡 Insight:** Casual riders spend significantly more time per ride compared to members, despite having fewer total rides.*
 
 ---
 
 #### 📅 Query 2: Total rides by day of the week
 ***Purpose:** To identify weekly usage patterns and compare the volume of rides on weekdays versus weekends for both user groups.*
+
 ```sql
 SELECT 
   day_of_week,
@@ -107,12 +117,14 @@ ORDER BY
   END, 
   member_casual;
   ```
+
 >***💡 Insight:** Casual riders peak during the weekends (Saturday and Sunday), indicating strong usage for leisure activities. In contrast, annual members maintain a consistent and high volume during the weekdays, reflecting a daily commuting routine.*
 
 ---
 
 #### ⏱️ Query 3: Total rides by hour of the day
 ***Purpose:** To analyze intra-day usage trends and pinpoint peak hours for casual riders and members.*
+
 ```sql
 SELECT 
   start_hour,
@@ -122,10 +134,11 @@ FROM `stable-ring-382611.cyclistic_case_study.cleaned_tripdata`
 GROUP BY start_hour, member_casual
 ORDER BY start_hour, member_casual;
 ```
+
 >***💡 Insight:** Annual members exhibit two distinct usage peaks at 8 AM and 5 PM, which strongly aligns with standard office commuting hours. Casual riders show a gradual increase throughout the day, peaking in the late afternoon for leisurely, unhurried rides.*
 
-### Visualization
-*To effectively communicate the differences between "Commuters" (members) and "Leisure Riders" (casuals) to the Executive Team, I built an interactive dashboard using Tableau.*
+### 🎨 Visualization
+**Objective:** To effectively communicate the differences between "Commuters" (members) and "Leisure Riders" (casuals) to the Executive Team, I built an interactive dashboard using Tableau.
 
 <img width="999" height="799" alt="Cyclistic Bike-Share_ Member vs  Casual Riders Analysis" src="https://github.com/user-attachments/assets/c5e8ed92-9f3a-41d1-96a7-2c7fc56f2e3e" />
 
@@ -134,12 +147,12 @@ ORDER BY start_hour, member_casual;
 **🔗 [Click here to view the Interactive Dashboard on Tableau Public](https://public.tableau.com/views/VizofCyclisticBike/CyclisticBike-ShareMembervs_CasualRidersAnalysis?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**
 *(Tip: Feel free to interact with the filters and hover over the charts to explore detailed metrics!)*
 
-## 💡 Strategic Recommendations (Act Phase)
 
-### Conclusion
+## 💡 STRATEGIC RECOMMENDATIONS
+### 🏁 Conclusion
 Through comprehensive analysis using Python and SQL, the data clearly defines the underlying differences in usage behaviors. Annual members primarily use bikes for daily, routine commuting with shorter ride durations on weekdays. In contrast, casual riders use bikes for leisure and tourism, with significantly longer ride durations concentrated on weekends and during the summer.
 
-### Solutions & Strategic Recommendations
+### 🚀 Solutions & Strategic Recommendations
 To convert casual riders into annual members, Cyclistic should avoid pitching "daily commute savings" and instead focus messaging on maximizing savings on leisure activities and weekend rides.
 
 1. **Introduce Flexible Leisure-Oriented Passes:** Launch a seasonal "Summer Membership" or a "Weekend Member Pass," featuring a credit-rollover option where pass fees can be applied toward upgrading to a full Annual Membership.
@@ -152,13 +165,13 @@ To convert casual riders into annual members, Cyclistic should avoid pitching "d
    * **Pros:** Provides a strong, personalized financial incentive to upgrade based on the user's actual behavior.
    * **Cons:** Requires development time from the software engineering team to integrate dynamic messaging.
 
-### Next Steps & Action Plan
+### 📋 Next Steps & Action Plan
 * **Who:** The Cyclistic Marketing Analytics Team & Digital Marketing Team.
 * **What:** Pilot a targeted digital marketing campaign using the "Cost Comparison" messaging across email and social media channels. Gather supplementary data, specifically weather patterns and financial pricing models, to refine the break-even point for riders.
 * **When:** Launch the pilot campaign in May, exactly 4 weeks ahead of the upcoming summer peak season. Track and evaluate the casual-to-member conversion rate throughout the summer months to determine campaign efficacy.
 
 
-## 🧠 Project Retrospective & Learnings
+## 🧠 PROJECT RETROSPECTIVE & LEARNINGS
 * Stepping outside the hypothetical business scenario, working on this case study provided invaluable hands-on experience with real-world data engineering challenges.
 
 * The most significant hurdle I encountered was environment compatibility during the data ingestion phase. Initially, I wrote a Python script in Google Colab to automate pushing 12 massive CSV files from Google Drive to BigQuery to overcome standard upload limits. However, when migrating the portfolio project to Kaggle, I quickly realized that the google.colab library (specifically the authentication and Drive mounting functions) was entirely incompatible with the Kaggle environment.
@@ -166,3 +179,6 @@ To convert casual riders into annual members, Cyclistic should avoid pitching "d
 * To resolve this, I had to adapt my workflow. Instead of relying on Google Drive, I sourced the dataset directly within Kaggle and modified my Python script to dynamically read from Kaggle's ../input/ directory using the os and glob libraries. This allowed the pandas.to_gbq() function to successfully push the data to BigQuery without relying on external dependencies.
 
 * This roadblock turned into a highly rewarding learning opportunity. It not only strengthened my Python programming skills but also taught me the importance of writing adaptable code, troubleshooting environment-specific limitations, and independently researching technical workarounds—essential problem-solving skills for any data professional.
+
+---
+*Thank you for reading my case study! Feel free to connect with me on* [LinkedIn](https://www.linkedin.com/in/nguyen-d-thanh) *to discuss more about data analytics and this project.*
