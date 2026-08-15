@@ -1,3 +1,13 @@
+/*
+=============================================================================
+Script: 03_data_cleaning.sql
+Purpose: To filter out anomalies (negative durations, missing coordinates, 
+         staff test rides) and engineer new calculated features like trip 
+         duration and day of the week.
+Result:  Produces a fully cleaned, analysis-ready table (cleaned_tripdata) 
+         with logical trip bounds (1 min to 24 hours) and zero test entries.
+=============================================================================
+*/
 CREATE OR REPLACE TABLE `stable-ring-382611.cyclistic_case_study.cleaned_tripdata` AS
 
 WITH deduplicated_and_casted AS (
