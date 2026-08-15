@@ -1,5 +1,5 @@
 -- ==============================================================================
--- Phase 4: Analyze
+-- Analyze (Phase 4)
 -- Objective: Identify behavioral differences between casual riders and annual members.
 -- ==============================================================================
 
