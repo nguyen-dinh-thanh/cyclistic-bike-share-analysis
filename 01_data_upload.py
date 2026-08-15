@@ -1,3 +1,12 @@
+"""
+=============================================================================
+Script: 01_data_upload.py
+Purpose: To overcome BigQuery's 10MB local upload limit by automating 
+         the batch upload of 12 CSV files directly from Google Colab / Drive.
+Result:  Successfully pushes 12 monthly CSV files to BigQuery datasets 
+         as individual tables (e.g., tripdata_202501).
+=============================================================================
+"""
 import glob
 import os
 import pandas as pd
