@@ -161,7 +161,7 @@ To convert casual riders into annual members, Cyclistic should avoid pitching "d
 2. **Execute Time- and Location-Targeted Digital Campaigns:** Focus digital ad spending (social media, in-app push notifications) around high-traffic casual stations near parks, waterfronts, and tourist destinations.
    * **Pros:** High ROI on marketing budget by targeting the right audience at the right time.
    * **Cons:** May miss casual riders who ride outside of these specific "hot zones."
-3. **Implement Gamification & Cost Comparison:** Introduce an in-app feature highlighting cost comparisons: "You spent $X on single passes this month. An Annual Membership would have saved you $Y!"
+3. **Implement Gamification & Cost Comparison:** Introduce an in-app feature highlighting cost comparisons: *"You spent $X on single passes this month. An Annual Membership would have saved you $Y!"*
    * **Pros:** Provides a strong, personalized financial incentive to upgrade based on the user's actual behavior.
    * **Cons:** Requires development time from the software engineering team to integrate dynamic messaging.
 
