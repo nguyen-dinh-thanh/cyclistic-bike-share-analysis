@@ -13,7 +13,7 @@ How do annual members and casual riders use Cyclistic bikes differently?
 ### 👥 Key Stakeholders
 * **Lily Moreno:** Director of Marketing and direct manager.
 * **Cyclistic Marketing Analytics Team:** Fellow data analysts responsible for collecting and reporting data.
-* **Cyclistic Executive Team:** The detail-oriented team responsible for approving the recommended marketing program.*
+* **Cyclistic Executive Team:** The detail-oriented team responsible for approving the recommended marketing program.
 
 
 ## 🛠 DATA PREPARATION & PROCESSING
